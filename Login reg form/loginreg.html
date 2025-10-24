@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auth • Login & Register</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./loginreg.css" />
+</head>
+<body>
+  <main class="auth-shell">
+    <!-- Left panel -->
+    <aside class="brand-panel">
+      <div class="brand-inner">
+        <div class="logo">The Lilac</div>
+        <h1>Welcome back</h1>
+        <p>Sign in to manage your trips or create an account to start planning new adventures.</p>
+      </div>
+    </aside>
+
+    <!-- Main auth card -->
+    <section class="auth-card">
+
+      <!-- Radios + forms -->
+      <input type="radio" name="authtab" id="tab-login"  class="auth-tab" checked />
+      <input type="radio" name="authtab" id="tab-register" class="auth-tab" />
+
+      <!-- Visual tabs -->
+      <div class="tabs" role="tablist">
+        <label role="tab" aria-controls="panel-login"    for="tab-login">Login</label>
+        <label role="tab" aria-controls="panel-register" for="tab-register">Register</label>
+        <span class="tab-indicator" aria-hidden="true"></span>
+      </div>
+
+      <!-- Login form -->
+      <form id="panel-login" class="auth-form" autocomplete="on" novalidate>
+        <div class="field">
+          <label for="login-email">Email</label>
+          <input id="login-email" name="email" type="email" inputmode="email" placeholder="your@email.com" required />
+        </div>
+
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" placeholder="••••••••" required />
+        </div>
+
+        <!-- Forgot password -->
+        <div class="forgot-row">
+          <a class="forgot-link" href="#" aria-label="Reset your password">Forgot password?</a>
+        </div>
+
+        <div class="row">
+          <label class="check">
+            <input type="checkbox" name="remember" />
+            <span>Remember me</span>
+          </label>
+        </div>
+
+        <button class="cta" type="submit">Sign in</button>
+
+        <p class="alt">
+          New here?
+          <label for="tab-register" class="linkish" role="button" tabindex="0">Create an account</label>
+        </p>
+      </form>
+
+      <!-- Register form -->
+      <form id="panel-register" class="auth-form" autocomplete="on" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="first_name" type="text" placeholder="Modupe" required />
+          </div>
+          <div class="field">
+            <label for="last-name">Last name</label>
+            <input id="last-name" name="last_name" type="text" placeholder="Otubamowo" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="reg-email">Email</label>
+          <input id="reg-email" name="email" type="email" inputmode="email" placeholder="your@email.com" required />
+        </div>
+
+        <div class="field">
+          <label for="reg-password">Password</label>
+          <input id="reg-password" name="password" type="password" placeholder="At least 8 characters" minlength="8" required />
+        </div>
+
+        <label class="check">
+          <input type="checkbox" required />
+          <span>I agree to the <a class="inline-link" href="#">Terms</a> & <a class="inline-link" href="#">Privacy</a></span>
+        </label>
+
+        <button class="cta" type="submit">Create account</button>
+
+        <p class="alt">
+          Already have an account?
+          <label for="tab-login" class="linkish" role="button" tabindex="0">Sign in</label>
+        </p>
+      </form>
+
+
+    </section>
+  </main>
+</body>
+</html>

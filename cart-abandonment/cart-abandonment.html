@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart Abandonment Dashboard</title>
+  <link rel="stylesheet" href="cart-abandonment.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <h1 class="brand">Cart<span>Rescue</span></h1>
+    <div class="top-actions">
+      <button class="ghost">Export CSV</button>
+      <button class="accent">Create Recovery Flow</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <!-- Radios control selected customer (CSS only) -->
+    <input class="sel" type="radio" name="cust" id="c-2051" checked>
+    <input class="sel" type="radio" name="cust" id="c-2050">
+    <input class="sel" type="radio" name="cust" id="c-2049">
+    <input class="sel" type="radio" name="cust" id="c-2048">
+
+    <section class="content">
+      <!-- Left column: list -->
+      <section class="list-col" aria-label="Abandoned carts">
+        <div class="toolbar">
+          <div class="search">
+            <input type="search" placeholder="Search name, email or product…">
+          </div>
+
+          <!-- Segmented status filter (UI only) -->
+          <div class="seg">
+            <input type="radio" name="flt" id="flt-all" checked>
+            <label for="flt-all">All</label>
+            <input type="radio" name="flt" id="flt-recovered">
+            <label for="flt-recovered">Recovered</label>
+            <input type="radio" name="flt" id="flt-nurturing">
+            <label for="flt-nurturing">Nurturing</label>
+            <input type="radio" name="flt" id="flt-nosend">
+            <label for="flt-nosend">Not sent</label>
+            <span class="seg-indicator" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="head row">
+          <span class="h h-person">Customer</span>
+          <span class="h h-items">Items in cart</span>
+          <span class="h h-value">Value</span>
+          <span class="h h-last">Last activity</span>
+          <span class="h h-status">Email status</span>
+        </div>
+
+        <!-- Each row labels a radio above to open the sidebar panel -->
+        <label for="c-2051" class="row">
+          <span class="c c-person">
+            <span class="avatar">EC</span>
+            <span class="stack">
+              <b>Emma Collins</b>
+              <i class="muted tiny">emma.collins@example.com</i>
+            </span>
+          </span>
+          <span class="c c-items">Backpack, Bottle</span>
+          <span class="c c-value">$189.90</span>
+          <span class="c c-last">Today · 09:42</span>
+          <span class="c c-status"><span class="chip nurturing">Nurturing</span></span>
+        </label>
+
+        <label for="c-2050" class="row">
+          <span class="c c-person">
+            <span class="avatar">NP</span>
+            <span class="stack">
+              <b>Noah Patel</b>
+              <i class="muted tiny">noah.patel@example.com</i>
+            </span>
+          </span>
+          <span class="c c-items">Standing desk</span>
+          <span class="c c-value">$820.00</span>
+          <span class="c c-last">Yesterday</span>
+          <span class="c c-status"><span class="chip recovered">Recovered</span></span>
+        </label>
+
+        <label for="c-2049" class="row">
+          <span class="c c-person">
+            <span class="avatar">MT</span>
+            <span class="stack">
+              <b>Mia Thompson</b>
+              <i class="muted tiny">mia.t@example.com</i>
+            </span>
+          </span>
+          <span class="c c-items">Sneakers, Socks</span>
+          <span class="c c-value">$124.50</span>
+          <span class="c c-last">2 days ago</span>
+          <span class="c c-status"><span class="chip nosend">Not sent</span></span>
+        </label>
+
+        <label for="c-2048" class="row">
+          <span class="c c-person">
+            <span class="avatar">OG</span>
+            <span class="stack">
+              <b>Oliver Green</b>
+              <i class="muted tiny">oliver.green@example.com</i>
+            </span>
+          </span>
+          <span class="c c-items">Monitor arm</span>
+          <span class="c c-value">$139.00</span>
+          <span class="c c-last">3 days ago</span>
+          <span class="c c-status"><span class="chip recovered">Recovered</span></span>
+        </label>
+      </section>
+
+      <!-- Sidebar preview (CSS-only panels) -->
+      <aside class="sidebar" aria-live="polite" aria-label="Customer details">
+        <!-- Emma -->
+        <article class="panel p-2051">
+          <header class="sb-head">
+            <div class="who">
+              <div class="avatar lg">EC</div>
+              <div>
+                <h3>Emma Collins</h3>
+                <p class="muted tiny">emma.collins@example.com</p>
+              </div>
+            </div>
+            <span class="chip nurturing">Nurturing</span>
+          </header>
+
+          <div class="sb-block">
+            <h4>Cart summary</h4>
+            <ul class="lines">
+              <li><span>Canvas backpack</span><b>$159.90</b></li>
+              <li><span>Thermal bottle</span><b>$30.00</b></li>
+            </ul>
+            <div class="meta">
+              <div><span class="muted tiny">Cart value</span><strong>$189.90</strong></div>
+              <div><span class="muted tiny">Last activity</span><strong>Today · 09:42</strong></div>
+              <div><span class="muted tiny">Session</span><strong>Returning</strong></div>
+            </div>
+          </div>
+
+          <div class="sb-block">
+            <h4>Recovery emails</h4>
+            <ul class="bullets">
+              <li>Reminder #1 sent · opened</li>
+              <li>Reminder #2 scheduled for 18:00</li>
+            </ul>
+          </div>
+
+          <div class="sb-actions">
+            <button class="ghost">Send manual email</button>
+            <button class="accent">Generate coupon</button>
+          </div>
+        </article>
+
+        <!-- Noah -->
+        <article class="panel p-2050">
+          <header class="sb-head">
+            <div class="who">
+              <div class="avatar lg">NP</div>
+              <div>
+                <h3>Noah Patel</h3>
+                <p class="muted tiny">noah.patel@example.com</p>
+              </div>
+            </div>
+            <span class="chip recovered">Recovered</span>
+          </header>
+
+          <div class="sb-block">
+            <h4>Outcome</h4>
+            <p>Order placed after reminder #1. Cart fully recovered.</p>
+            <div class="meta">
+              <div><span class="muted tiny">Recovered value</span><strong>$820.00</strong></div>
+              <div><span class="muted tiny">Order #</span><strong>1023</strong></div>
+            </div>
+          </div>
+
+          <div class="sb-actions">
+            <button class="ghost">View order</button>
+            <button class="accent">Send thank you</button>
+          </div>
+        </article>
+
+        <!-- Mia -->
+        <article class="panel p-2049">
+          <header class="sb-head">
+            <div class="who">
+              <div class="avatar lg">MT</div>
+              <div>
+                <h3>Mia Thompson</h3>
+                <p class="muted tiny">mia.t@example.com</p>
+              </div>
+            </div>
+            <span class="chip nosend">Not sent</span>
+          </header>
+
+          <div class="sb-block">
+            <h4>Reason</h4>
+            <p>Customer opted out of marketing emails. Consider SMS or push.</p>
+            <div class="meta">
+              <div><span class="muted tiny">Cart value</span><strong>$124.50</strong></div>
+              <div><span class="muted tiny">Consent</span><strong>Email opt-out</strong></div>
+            </div>
+          </div>
+
+          <div class="sb-actions">
+            <button class="ghost">Send SMS</button>
+            <button class="accent">Create push campaign</button>
+          </div>
+        </article>
+
+        <!-- Oliver -->
+        <article class="panel p-2048">
+          <header class="sb-head">
+            <div class="who">
+              <div class="avatar lg">OG</div>
+              <div>
+                <h3>Oliver Green</h3>
+                <p class="muted tiny">oliver.green@example.com</p>
+              </div>
+            </div>
+            <span class="chip recovered">Recovered</span>
+          </header>
+
+          <div class="sb-block">
+            <h4>Outcome</h4>
+            <p>Converted via coupon code <b>WELCOME20</b> included in reminder #2.</p>
+            <div class="meta">
+              <div><span class="muted tiny">Recovered value</span><strong>$139.00</strong></div>
+              <div><span class="muted tiny">Coupon used</span><strong>WELCOME20</strong></div>
+            </div>
+          </div>
+
+          <div class="sb-actions">
+            <button class="ghost">View order</button>
+            <button class="accent">Repeat campaign</button>
+          </div>
+        </article>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

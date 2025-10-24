@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>To-Do</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <main class="todo-shell">
+    <header class="app-bar" aria-label="App header">
+      <h1 class="brand">Checklist</h1>
+      <div class="bar-right">
+        <span class="hint">Modupe's Diary</span>
+      </div>
+    </header>
+
+    <section class="todo-card" aria-label="To-do board">
+      <form class="add-row" action="#" method="post" novalidate>
+        <div class="add-field">
+          <input type="text" name="task" placeholder="Add a new task…" aria-label="Task name" />
+        </div>
+        <div class="add-meta">
+          <input type="date" name="due" aria-label="Due date" />
+          <select name="priority" aria-label="Priority">
+            <option value="">Priority</option>
+            <option value="low">Low</option>
+            <option value="med">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <button class="add-btn" type="submit" aria-label="Add task">Add</button>
+      </form>
+
+      <!-- Filters (no JS) -->
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <input type="radio" name="flt" id="flt-all" checked />
+        <label role="tab" tabindex="0" aria-controls="list" for="flt-all">All</label>
+
+        <input type="radio" name="flt" id="flt-active" />
+        <label role="tab" tabindex="0" aria-controls="list" for="flt-active">Active</label>
+
+        <input type="radio" name="flt" id="flt-completed" />
+        <label role="tab" tabindex="0" aria-controls="list" for="flt-completed">Completed</label>
+
+        <span class="tab-indicator" aria-hidden="true"></span>
+      </div>
+
+      <!-- List -->
+      <ul id="list" class="todo-list">
+        <!-- Sample items (toggle completed by checking the box visually; filtering is CSS-based using .completed class) -->
+        <li class="task">
+          <label class="tick">
+            <input type="checkbox" />
+            <span class="box" aria-hidden="true"></span>
+            <span class="text">
+              Wire up travel hero section
+              <small class="meta">
+                <span class="chip due">Due: 24 Oct</span>
+                <span class="chip pri med">Medium</span>
+              </small>
+            </span>
+          </label>
+          <button class="action delete" type="button" aria-label="Delete task">×</button>
+        </li>
+
+        <li class="task completed">
+          <label class="tick">
+            <input type="checkbox" checked />
+            <span class="box" aria-hidden="true"></span>
+            <span class="text">
+              Prepare brand palette tokens
+              <small class="meta">
+                <span class="chip pri low">Low</span>
+              </small>
+            </span>
+          </label>
+          <button class="action delete" type="button" aria-label="Delete task">×</button>
+        </li>
+
+        <li class="task">
+          <label class="tick">
+            <input type="checkbox" />
+            <span class="box" aria-hidden="true"></span>
+            <span class="text">
+              Build mobile nav spacing
+              <small class="meta">
+                <span class="chip due">Due: Today</span>
+                <span class="chip pri high">High</span>
+              </small>
+            </span>
+          </label>
+          <button class="action delete" type="button" aria-label="Delete task">×</button>
+        </li>
+
+        <li class="task completed">
+          <label class="tick">
+            <input type="checkbox" checked />
+            <span class="box" aria-hidden="true"></span>
+            <span class="text">
+              Add footer social alignment
+              <small class="meta">
+                <span class="chip pri low">Low</span>
+              </small>
+            </span>
+          </label>
+          <button class="action delete" type="button" aria-label="Delete task">×</button>
+        </li>
+
+        <li class="task">
+          <label class="tick">
+            <input type="checkbox" />
+            <span class="box" aria-hidden="true"></span>
+            <span class="text">
+              QA tablet card grid
+              <small class="meta">
+                <span class="chip due">Due: Fri</span>
+                <span class="chip pri med">Medium</span>
+              </small>
+            </span>
+          </label>
+          <button class="action delete" type="button" aria-label="Delete task">×</button>
+        </li>
+      </ul>
+
+      <footer class="footer-row" aria-label="List summary">
+        <div class="summary">
+          <span class="dot green"></span> Complete
+          <span class="sep">•</span>
+          <span class="dot gray"></span> Active
+        </div>
+        <div class="bulk">
+          <button class="ghost" type="button" aria-label="Clear completed">Clear completed</button>
+        </div>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>

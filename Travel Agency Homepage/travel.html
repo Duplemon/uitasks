@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency Homepage</title>
+    <link rel="stylesheet" href="./travel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+</head>
+<body>
+    <div class="webpage">
+        <div class="hero">
+            <div class="hero-navigation">
+               <div class="nav-hero-top">
+                 <div class="logo">
+                    <h2>Booking.com</h2>
+                 </div>
+                 <div id="menu" class="nav-panel">
+                    <ul class="utility-nav">
+                        <li class="utility-item">
+                            <img src="./images/ukflag-icon.png" alt="uk-flag">
+                        </li>
+                        <li class="utility-item">
+                             <span class="material-symbols-rounded">help</span>
+                        </li>
+                        <li class="utility-item">
+                            <button>Register</button>
+                        </li>
+                        <li class="utility-item">
+                            <button>Sign in</button>
+                        </li>
+                    </ul>
+                    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+                    <label for="menu-toggle" class="hamburger" aria-label="Toggle menu" aria-controls="menu">
+                    <span></span><span></span><span></span>
+                    </label>
+               <div class="nav-hero-bottom">
+                    <a href="#" class="nav-hero-text-image"><span class="material-symbols-rounded">airplane_ticket</span>Tickets</a>
+                    <a href="#" class="nav-hero-text-image"><span class="material-symbols-rounded">car_rental</span>Rentals</a>
+                    <a href="#" class="nav-hero-text-image"><span class="material-symbols-rounded">next_week</span>Travels</a>
+                    <a href="#" class="nav-hero-text-image"><span class="material-symbols-rounded">rest_area</span>Stopover</a>
+                    <a href="#" class="nav-hero-text-image"><span class="material-symbols-rounded">attractions</span>Attractions</a>
+               </div>
+               </div>
+            </div>
+            <div class="hero-main-section">
+                    <div class="intro-copy">
+                        <div class="top-copy">
+                            <h1>Compare and book cheap<br> flights with ease</h1>
+                        </div>
+                        <div class="bottom-copy">
+                            <p>Discover your next dream destination</p>
+                        </div>
+                    </div>
+                    <form action="search-card" method="get">
+                        <fieldset class="trip-type">
+                          <!-- <legend class="sr-only">Trip type</legend> -->
+                              <input type="radio" name="trip" id="round" checked>
+                              <label for="round" class="pill">Round trip</label>
+                              
+                              <input type="radio" name="trip" id="oneway" >
+                              <label for="oneway" class="pill">One way</label>
+                              
+                              <input type="radio" name="trip" id="multicity" >
+                              <label for="multicity" class="pill">Multi-city</label>
+
+                              <input type="radio" name="trip" id="economy" >
+                              <label for="economy" class="pill">Economy</label>
+                        </fieldset>
+                        <div class="fields">
+                            <button class="cta" type="submit">Explore</button>
+                        </div>
+                    </form>
+            </div>
+            <div class="hero-explore-section">
+                <div class="explore-copy">
+                    <div class="top-explore-copy">
+                        <h2>Explore by country</h2>
+                    </div>
+                    <div class="bottom-explore-copy">
+                        <p>Discover trending destinations, just a flight away</p>
+                    </div>
+                </div>               
+                <ul class="card-row-top">
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/lanzarote-paradise-deal.webp" alt="lanzarote-paradise">
+                                <figcaption class="card-label">
+                                    <img class="flag" src="./images/ukflag-icon.png" alt="lanzarote-uk">
+                                    <span class="country">Thailand</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/dlm_73219_club_sun_village_apartments_1221_20-min.jpg" alt="lanzarote-paradise">
+                                <figcaption class="card-label">
+                                    <img class="flag" src="./images/ukflag-icon.png" alt="lanzarote-uk">
+                                    <span class="country">Spain</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/majorca-fergus-club-europa-deal.webp" alt="lanzarote-paradise">
+                                <figcaption class="card-label">
+                                    <img class="flag" src="./images/ukflag-icon.png" alt="lanzarote-uk">
+                                    <span class="country">Majorca</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/salou-aparthotel-sunclub-salou-deal.webp" alt="lanzarote-paradise">
+                                <figcaption class="card-label">
+                                    <img class="flag" src="./images/ukflag-icon.png" alt="lanzarote-uk">
+                                    <span class="country">Salou</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="card-row-bottom">
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/lanzarote-paradise-deal.webp" alt="lanzarote-paradise">
+                                <figcaption class="card-label">
+                                    <img class="flag" src="./images/ukflag-icon.png" alt="lanzarote-uk">
+                                    <span class="country">Thailand</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/dlm_73219_club_sun_village_apartments_1221_20-min.jpg" alt="lanzarote-paradise">
+                                <figcaption class="card-label">
+                                    <img class="flag" src="./images/ukflag-icon.png" alt="lanzarote-uk">
+                                    <span class="country">Spain</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/majorca-fergus-club-europa-deal.webp" alt="lanzarote-paradise">
+                                <figcaption class="card-label">
+                                    <img class="flag" src="./images/ukflag-icon.png" alt="lanzarote-uk">
+                                    <span class="country">Majorca</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/salou-aparthotel-sunclub-salou-deal.webp" alt="lanzarote-paradise">
+                                <figcaption class="card-label">
+                                    <img class="flag" src="./images/ukflag-icon.png" alt="lanzarote-uk">
+                                    <span class="country">Salou</span>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+            
+            </div>
+            <div class="hero-lower-section">
+                <div class="hero-lower-section-copy">
+                   <div class="hero-lower-section-header">
+                      <h2>Holiday Inspiration</h2>
+                   </div>
+                   <div class="hero-lower-section-text">
+                      <p>Spotlight on our most popular destination</p>
+                   </div>
+                </div>
+                <ul class="card-row-top holiday-card">
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/lanzarote-paradise-deal.webp" alt="lanzarote-paradise">
+                                <span class="county">Thailand Holidays</span>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/dlm_73219_club_sun_village_apartments_1221_20-min.jpg" alt="lanzarote-paradise">
+                                    <span class="county">Spain Holidays</span>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/majorca-fergus-club-europa-deal.webp" alt="lanzarote-paradise">
+                                    <span class="county">Majorca Holidays</span>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="card card-image">
+                            <figure class="card-media">
+                                <img src="./images/salou-aparthotel-sunclub-salou-deal.webp" alt="lanzarote-paradise">
+                                <span class="county">Salou Holidays</span>
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+                <div class="fieldest">             
+                 <button class="cta" type="submit">Explore all our destinations</button>
+                </div> 
+            </div> 
+            <div class="hero-footer-section">
+                <div class="footer-top-section">
+                    <h2 class="footer-copy">Can&#39;t find what you&#39;re looking for?</h2>
+                    <button class="start-button"><span class="material-symbols-rounded">search</span></button>
+                </div>
+                <hr>
+                <div class="footer-end-section">
+                    <div class="row-end-one">
+                        <div class="row-end-header">
+                        <h2 class="row-header footer-copy">Company Information & Policies</h2>
+                        </div>
+                        <div class="row-end-list">
+                            <li class="footer-list"><a href="#">Privacy notice</a></li>
+                            <li class="footer-list"><a href="#">Booking terms & conditions</a></li>
+                            <li class="footer-list"><a href="#">Website accessibility</a></li>
+                            <li class="footer-list"><a href="#">Modern slavery statement</a></li>
+                            <li class="footer-list"><a href="#">Ways to pay</a></li>
+                            <li class="footer-list"><a href="#">Media centre</a></li>
+                            <li class="footer-list"><a href="#">Travel jobs</a></li>
+                            <li class="footer-list"><a href="#">Notice</a></li>
+                        </div>
+                    </div>
+                     <div class="row-end-one">
+                        <div class="row-end-header">
+                        <h2 class="row-header footer-copy">Information & Policies</h2>
+                        </div>
+                        <div class="row-end-list">
+                            <li class="footer-list"><a href="#">Accessibility</a></li>
+                            <li class="footer-list"><a href="#">Modern slavery statement</a></li>
+                            <li class="footer-list"><a href="#">Ways to pay</a></li>
+                            <li class="footer-list"><a href="#">Media centre</a></li>
+                            <li class="footer-list"><a href="#">Travel jobs</a></li>
+                            <li class="footer-list"><a href="#">Notice</a></li>
+                        </div>
+                    </div>
+                     <div class="row-end-one">
+                        <div class="row-end-header">
+                        <h2 class="row-header footer-copy">Policies</h2>
+                        </div>
+                        <div class="row-end-list">
+                            <li class="footer-list"><a href="#">Website accessibility</a></li>
+                            <li class="footer-list"><a href="#">Modern slavery statement</a></li>
+                            <li class="footer-list"><a href="#">Ways to pay</a></li>
+                            <li class="footer-list"><a href="#">Media centre</a></li>
+                            <li class="footer-list"><a href="#">Travel jobs</a></li>
+                            <li class="footer-list"><a href="#">Notice</a></li>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer-mid-section">
+                      <div class="mid-top-section">
+                        <p class="footer-text">Don't miss out! Sign up for holiday offers</p>
+                      </div>
+                      <div class="footer-social-links">
+                        <div class="social-icons-sub"><img src="./images/instagram-logo.png" alt="Instagram"></div>
+                        <div class="social-icons-sub"><img src="./images/linkedin-logo.png" alt="Linkedin"></div>
+                        <div class="social-icons-sub"><img src="./images/x-logo.png" alt="X-logo"></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

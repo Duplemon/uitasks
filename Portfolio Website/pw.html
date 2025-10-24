@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modupe Otubamowo – Portfolio</title>
+  <link rel="stylesheet" href="./pw.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Balthazar&family=Raleway:wght@200;300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="site">
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="navigation">
+      <div class="logo"><h1>Modupe Otubamowo</h1></div>
+      <nav class="right-nav-buttons" aria-label="Primary">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#writing">Blog</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main" class="site-main">
+
+    <!-- HERO -->
+    <section id="about" class="hero-wrap" aria-label="Intro">
+      <div class="hero">
+        <div class="hero-text">
+          <h2 class="hero-text-subheading-one">
+            Front-end engineer with a background in marketing automation
+          </h2>
+          <p class="hero-text-subheading-two">
+            I design and build clean, accessible interfaces with thoughtful
+            motion and strong performance—bridging product, brand, and growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects" aria-label="Selected projects">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <p class="muted">A few projects that show my range across UI, systems, and performance.</p>
+      </div>
+
+      <div class="cards">
+        <a class="proj-card" href="#" aria-label="Open Case Study: Travel deals landing">
+          <div class="thumb" style="background-image:url('./images/project-1.jpg');"></div>
+          <div class="card-body">
+            <h3>Travel deals landing</h3>
+            <p>Hero + search + deals grid. 98 Lighthouse performance.</p>
+            <span class="chip">React • CSS</span>
+          </div>
+        </a>
+
+        <a class="proj-card" href="#" aria-label="Open Case Study: Ticketing dashboard">
+          <div class="thumb" style="background-image:url('./images/project-2.jpg');"></div>
+          <div class="card-body">
+            <h3>Ticketing dashboard</h3>
+            <p>Status filters, conversation preview, and dark mode.</p>
+            <span class="chip">TypeScript • Flex</span>
+          </div>
+        </a>
+
+        <a class="proj-card" href="#" aria-label="Open Case Study: Patient portal">
+          <div class="thumb" style="background-image:url('./images/project-3.jpg');"></div>
+          <div class="card-body">
+            <h3>Patient portal</h3>
+            <p>Appointments, prescriptions, and medical history UX.</p>
+            <span class="chip">HTML • CSS-only</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact" aria-label="Contact">
+      <div class="section-head">
+        <h2>Let’s collaborate</h2>
+        <p class="muted">Share a bit about your project and I’ll get back within 1–2 business days.</p>
+      </div>
+
+      <form class="form" action="#" method="post" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" inputmode="email" placeholder="you@mail.com" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="company">Company / Org</label>
+            <input id="company" name="company" type="text" placeholder="Acme Inc." />
+          </div>
+          <div class="field">
+            <label for="budget">Budget (optional)</label>
+            <input id="budget" name="budget" type="text" placeholder="$5–10k" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" rows="5" placeholder="Timeline, goals, links…"></textarea>
+        </div>
+
+        <div class="actions">
+          <label class="check">
+            <input type="checkbox" />
+            <span>Send me a copy</span>
+          </label>
+          <button class="cta" type="submit">Send message</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- GLOBAL FOOTER (always at the very bottom) -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="socials">
+        <a class="icon-btn" href="#" aria-label="Instagram">
+          <img src="./images/instagram-logo.png" alt="" />
+        </a>
+        <a class="icon-btn" href="#" aria-label="LinkedIn">
+          <img src="./images/linkedin-logo.png" alt="" />
+        </a>
+        <a class="icon-btn" href="#" aria-label="X">
+          <img src="./images/x-logo.png" alt="" />
+        </a>
+      </div>
+      <p class="copy">Copyright 2025</p>
+    </div>
+  </footer>
+</body>
+</html>

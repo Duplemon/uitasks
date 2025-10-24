@@ -1,0 +1,340 @@
+:root{
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+
+  --ink-900:#0f172a; 
+  --ink-700:#334155;
+  --ink-500:#64748b;
+
+  --line:#e5eaf3;
+
+  --blue-50:#f1f5ff;
+  --blue-100:#e7edff;
+  --blue-200:#d6e3ff;
+  --blue-400:#6ea8ff;
+  --blue-500:#4d83ff;   /* primary */
+  --blue-600:#3a66df;   /* primary dark */
+
+  --green-600:#0fac48af;
+  --amber-600:#ff8a04e8;
+  --red-600:#ff0000da;
+
+  --r-xl: 18px;
+  --r-lg: 14px;
+  --r-md: 10px;
+
+  --sh-1: 0 10px 30px rgba(13, 23, 40, .06);
+  --sh-2: 0 18px 40px rgba(13, 23, 40, .10);
+
+  --size: 1rem;     
+  --font: .75rem; 
+}
+
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0;
+  font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color:var(--ink-900);
+  background:var(--bg);
+}
+
+/* ========== App shell ========== */
+.app{
+  min-height:100dvh;
+  display:flex;         
+  gap: 22px;
+  padding: clamp(14px, 3vw, 28px);
+}
+
+/* Sidebar */
+.sidebar{
+  width: 250px;
+  background: var(--panel);
+  border:1px solid var(--line);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-1);
+  padding: 18px;
+  display:flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.brand{
+  font-weight: 800;
+  letter-spacing:.3px;
+  color: var(--blue-600);
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  padding:.55rem .8rem;
+  border-radius: 999px;
+  text-align:center;
+}
+.side-nav{
+  display:flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.nav-link{
+  display:block;
+  text-decoration:none;
+  color:var(--ink-700);
+  padding:.65rem .75rem;
+  border-radius: 10px;
+}
+.nav-link:hover{ background: var(--blue-50); }
+.nav-link.is-active{
+  color:#fff;
+  background: linear-gradient(180deg, var(--blue-500), var(--blue-600));
+}
+
+.side-meta{
+  margin-top:auto;
+  border-top:1px solid var(--line);
+  padding-top: 14px;
+}
+.agent{
+  display:flex; 
+  align-items:center; 
+  justify-content: space-between;
+  gap:10px;
+}
+.avatar{
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;    
+  justify-content: center;  
+  background: var(--blue-100);
+  color: var(--blue-600);
+  font-weight: 700;
+  font-size: 12px;        
+  padding: 0;              
+}
+.agent-meta .muted{ color:var(--ink-500); font-size:.9rem; }
+
+/* Main content */
+.content{
+  flex: 1 1 auto;
+  min-width: 0;
+  display:flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Toolbar */
+.toolbar{
+  background: var(--panel);
+  border:1px solid var(--line);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-1);
+  padding: 12px 14px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 12px;
+}
+.title{ margin:0; font-size: clamp(20px, 1.6vw, 24px); }
+.tools{ display:flex; align-items:center; gap: 12px; flex-wrap: wrap; }
+.search input{
+  width: clamp(220px, 28vw, 420px);
+  padding:.75rem .9rem;
+  border-radius: 12px;
+  border:1px solid var(--line);
+  background:#f8faff;
+  font:inherit;
+}
+
+/* Filters = CSS-only tabs that also filter the list */
+.filters{
+  position:relative;
+  display:flex;                    /* flex */
+  border:1px solid var(--line);
+  border-radius: 999px;
+  padding:.1rem .3rem;
+  background:#f6f8ff;
+  overflow:hidden;
+  gap: 4px;
+}
+.filters input{ display:none; }
+.filters label{
+  position:relative;
+  z-index:1;
+  padding:.5rem .8rem;
+  border-radius:999px;
+  cursor:pointer;
+  color:var(--ink-700);
+  font-weight:600;
+}
+
+/* Workspace split */
+.workspace{
+  display:flex; gap: 16px; min-height: 520px;
+}
+
+/* Tickets column */
+.ticket-col{
+  flex: 0 0 40%;
+  min-width: 280px;
+  display:flex; flex-direction:column; gap: 12px;
+}
+
+/* Filter scope wrapper is used by CSS filter rules */
+.ticket-filter-scope{ display:flex; flex-direction: column; min-height:0; }
+
+/* Ticket list */
+.ticket-list{
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:10px;
+}
+.ticket-card{
+  width:100%;
+  text-align:left;
+  background: var(--panel);
+  border:1px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-1);
+  padding:.8rem .9rem;
+  display:flex; flex-direction:column; gap:6px;
+  cursor:pointer;
+}
+.ticket-card:hover{ border-color:#d8def0; background:#fcfdff; }
+.ticket-top, .ticket-mid{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.subject{ font-weight:600; }
+.muted{ color:var(--ink-500); }
+.ticket-btm{ font-size:.92rem; }
+
+/* Badges */
+.badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:6px;
+  padding:.2rem .55rem;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-size:.85rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+.badge.status.open{    color:#0b7;   background:#e9fff6; border-color:#bff1df; }
+.badge.status.pending{ color:var(--amber-600); background:#fff6e8; border-color:#ffe6c4; }
+.badge.status.closed{  color:var(--ink-500); background:#f2f4f8; border-color:#e5e9f1; }
+.badge.prio.high{      color:#fff; background:var(--red-600); border-color:var(--red-600); }
+.badge.prio.med{       color:#fff; background:var(--amber-600); border-color:var(--amber-600); }
+.badge.prio.low{       color:#fff; background:var(--green-600); border-color:var(--green-600); }
+.chip{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:.2rem .55rem; border-radius:999px;
+  border:1px dashed var(--line); color:var(--ink-500);
+}
+
+/* Conversation column */
+.thread-col{
+  flex: 1 1 auto;
+  min-width: 0;
+  background: var(--panel);
+  border:1px solid var(--line);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-2);
+  display:flex; flex-direction: column;
+}
+.thread-head{
+  padding: 12px 14px;
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+.thread-title h2{ margin:0 0 4px; font-size: clamp(18px, 1.4vw, 22px); }
+.thread-title .chips{ display:flex; gap:8px; flex-wrap:wrap; }
+.actions{ display:flex; gap:8px; }
+.ghost{
+  border:1px solid var(--line);
+  background:#f6f8ff;
+  color:var(--ink-700);
+  border-radius: 10px; padding:.5rem .8rem; cursor:pointer;
+}
+.ghost:hover{ filter:brightness(.98); }
+.primary{
+  border:0; background: linear-gradient(180deg, var(--blue-500), var(--blue-600));
+  color:#fff; padding:.6rem .95rem; border-radius:10px; cursor:pointer;
+}
+
+/* Thread bubbles */
+.thread{
+  padding: 12px 14px; display:flex; flex-direction:column; gap:10px; overflow:auto;
+}
+.msg{ display:flex; align-items:flex-start; gap:10px; }
+.msg .avatar{
+  width:34px; height:34px; border-radius:50%;
+  background: var(--blue-100);
+  color: var(--blue-600);
+  font-weight:700;
+  display:grid; place-items:center;
+}
+.bubble{
+  border:1px solid var(--line);
+  background:#f9fbff;
+  border-radius: 14px;
+  padding:.7rem .85rem;
+  max-width: 72ch;
+}
+.bubble .meta{ color:var(--ink-500); margin-bottom:4px; }
+.from-agent .bubble{ background:#eef3ff; }
+
+/* Composer */
+.composer{
+  margin-top:auto;
+  border-top:1px solid var(--line);
+  padding: 12px 14px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.composer textarea{
+  width:100%; resize:vertical;
+  min-height: 90px;
+  border:1px solid var(--line);
+  border-radius: 12px;
+  background:#fff;
+  font:inherit;
+  padding:.75rem .9rem;
+}
+.composer-actions{ display:flex; gap:8px; justify-content:flex-end; }
+
+/* ========== CSS-only filtering logic ========== */
+#flt-open:checked    ~ .workspace .ticket-filter-scope .ticket-list .ticket:not(.status-open)      { display:none; }
+#flt-pending:checked ~ .workspace .ticket-filter-scope .ticket-list .ticket:not(.status-pending)   { display:none; }
+#flt-closed:checked  ~ .workspace .ticket-filter-scope .ticket-list .ticket:not(.status-closed)    { display:none; }
+/* “All” shows everything by default */
+
+/* ========== Tablet (≤1140px) ========== */
+@media screen and (max-width:1140px){
+  .app{ gap: 16px; }
+  .sidebar{
+    width: 220px;
+  }
+  .workspace{ flex-direction: column; }       
+  .ticket-col{ flex-basis:auto; }
+}
+
+/* ========== Mobile (≤480px) ========== */
+@media screen and (max-width:480px){
+  .app{ padding: 12px; gap: 12px; flex-direction: column; }
+
+  .sidebar{
+    width: 100%;
+    padding: 12px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .side-nav{ display:flex; flex-direction: row; gap:6px; overflow:auto; }
+  .side-meta{ display:none; }
+
+  .toolbar{ flex-direction: column; align-items: stretch; gap:10px; }
+  .tools{ justify-content: space-between; }
+  .search input{ width: 100%; }
+
+  .filters{ width: 100%; padding: 3px; gap: 3px; }
+  .filters label{ flex:1 1 25%; text-align:center; padding:.45rem .55rem; }
+  .filters .tab-indicator{ inset:3px auto 3px 3px; height: calc(100% - 6px); width: calc(25% - 6px); }
+
+  .workspace{ gap:12px; }
+  .thread-head{ flex-direction: column; align-items: stretch; }
+  .composer-actions{ justify-content: stretch; }
+  .composer-actions .primary{ flex:1; }
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support Desk • Tickets</title>
+  <link rel="stylesheet" href="customer.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Sidebar (no JS) -->
+    <aside class="sidebar" aria-label="Support navigation">
+      <div class="brand">HelpDesk</div>
+
+      <nav class="side-nav">
+        <a class="nav-link is-active" href="#">Tickets</a>
+        <a class="nav-link" href="#">Customers</a>
+        <a class="nav-link" href="#">Reports</a>
+        <a class="nav-link" href="#">Settings</a>
+      </nav>
+
+      <div class="side-meta">
+        <div class="agent">
+          <div class="avatar" aria-hidden="true">MD</div>
+          <div class="agent-meta">
+            <strong>Modupe O.</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+      <!-- Toolbar -->
+      <header class="toolbar">
+        <h1 class="title">Tickets</h1>
+
+        <div class="tools">
+          <div class="search">
+            <input type="search" placeholder="Search tickets, IDs, customers…" aria-label="Search tickets" />
+          </div>
+
+          <!-- Status filters (CSS-only functional) -->
+          <fieldset class="filters" role="tablist" aria-label="Filter tickets by status">
+            <input type="radio" name="flt" id="flt-all"     checked />
+            <label for="flt-all"     role="tab">All</label>
+
+            <input type="radio" name="flt" id="flt-open" />
+            <label for="flt-open"    role="tab">Open</label>
+
+            <input type="radio" name="flt" id="flt-pending" />
+            <label for="flt-pending" role="tab">Pending</label>
+
+            <input type="radio" name="flt" id="flt-closed" />
+            <label for="flt-closed"  role="tab">Closed</label>
+
+            <span class="tab-indicator" aria-hidden="true"></span>
+          </fieldset>
+        </div>
+      </header>
+
+      <!-- Two-column workspace -->
+      <section class="workspace">
+        <!-- Tickets column -->
+        <div class="ticket-col">
+
+          <!-- Filter logic hook (wrap list so sibling selectors can target it) -->
+          <div class="ticket-filter-scope">
+
+            <ul class="ticket-list" aria-label="Ticket list">
+              <!-- Ticket -->
+              <li class="ticket status-open prio-high">
+                <button class="ticket-card" aria-label="Open ticket #4321">
+                  <div class="ticket-top">
+                    <span class="subject">Checkout fails when applying coupon</span>
+                    <span class="badge status open">Open</span>
+                  </div>
+                  <div class="ticket-mid">
+                    <span class="muted">#4321 • Jane Doe</span>
+                    <span class="badge prio high">High</span>
+                  </div>
+                  <div class="ticket-btm muted">Last reply 5m ago • Commerce</div>
+                </button>
+              </li>
+
+              <li class="ticket status-pending prio-med">
+                <button class="ticket-card">
+                  <div class="ticket-top">
+                    <span class="subject">Unable to reset password</span>
+                    <span class="badge status pending">Pending</span>
+                  </div>
+                  <div class="ticket-mid">
+                    <span class="muted">#4312 • Carlos Lima</span>
+                    <span class="badge prio med">Medium</span>
+                  </div>
+                  <div class="ticket-btm muted">Waiting for customer • Authentication</div>
+                </button>
+              </li>
+
+              <li class="ticket status-open prio-low">
+                <button class="ticket-card">
+                  <div class="ticket-top">
+                    <span class="subject">Add team members to account</span>
+                    <span class="badge status open">Open</span>
+                  </div>
+                  <div class="ticket-mid">
+                    <span class="muted">#4305 • Anne King</span>
+                    <span class="badge prio low">Low</span>
+                  </div>
+                  <div class="ticket-btm muted">New request • Billing</div>
+                </button>
+              </li>
+
+              <li class="ticket status-closed prio-med">
+                <button class="ticket-card">
+                  <div class="ticket-top">
+                    <span class="subject">Webhook retry succeeds</span>
+                    <span class="badge status closed">Closed</span>
+                  </div>
+                  <div class="ticket-mid">
+                    <span class="muted">#4290 • DevOps Bot</span>
+                    <span class="badge prio med">Medium</span>
+                  </div>
+                  <div class="ticket-btm muted">Resolved yesterday • API</div>
+                </button>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <!-- Conversation / preview column -->
+        <article class="thread-col" aria-label="Conversation preview">
+          <header class="thread-head">
+            <div class="thread-title">
+              <h2>Checkout fails when applying coupon</h2>
+              <div class="chips">
+                <span class="badge status open">Open</span>
+                <span class="badge prio high">High</span>
+                <span class="chip">#4321</span>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="ghost">Assign</button>
+              <button class="ghost">Close</button>
+            </div>
+          </header>
+
+          <div class="thread">
+            <div class="msg from-customer">
+              <div class="avatar" aria-hidden="true">JD</div>
+              <div class="bubble">
+                <div class="meta"><strong>Jane Doe</strong> • 09:42</div>
+                <p>Hi team, I get an error when I try to apply a coupon at checkout. It says “invalid code” but the code is active.</p>
+                <div class="labels">
+                  <span class="chip">Commerce</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="msg from-agent">
+              <div class="avatar" aria-hidden="true">MO</div>
+              <div class="bubble">
+                <div class="meta"><strong>Modupe (you)</strong> • 09:46</div>
+                <p>Thanks for flagging this, Jane! Could you share the coupon code and the cart total so we can reproduce?</p>
+              </div>
+            </div>
+
+            <div class="msg from-customer">
+              <div class="avatar" aria-hidden="true">JD</div>
+              <div class="bubble">
+                <div class="meta"><strong>Jane Doe</strong> • 09:50</div>
+                <p>Code: <b>WELCOME20</b>. Cart total: $128. Shipping to the UK.</p>
+              </div>
+            </div>
+          </div>
+
+          <footer class="composer" aria-label="Reply composer">
+            <textarea rows="3" placeholder="Write a reply…"></textarea>
+            <div class="composer-actions">
+              <button class="primary">Send</button>
+              <button class="ghost">Add note</button>
+            </div>
+          </footer>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

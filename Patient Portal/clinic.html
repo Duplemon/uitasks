@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patient Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./clinic.css" />
+</head>
+<body>
+  <div class="portal">
+
+    <!-- Off-canvas toggle (CSS only) -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true" />
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Primary">
+      <div class="brand">
+        <div class="logo">MO</div>
+        <div class="brand-text">
+          <strong>Clinic+</strong>
+          <span class="muted">Patient Portal</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link is-active" href="#" aria-current="page">Dashboard</a>
+        <a class="nav-link" href="#">Appointments</a>
+        <a class="nav-link" href="#">Prescriptions</a>
+        <a class="nav-link" href="#">Medical History</a>
+        <a class="nav-link" href="#">Billing</a>
+        <a class="nav-link" href="#">Settings</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p class="small muted">© 2025 HealthCare Clinic</p>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Mobile bar with hamburger -->
+      <header class="app-bar">
+        <label for="nav-toggle" class="hamburger" aria-label="Open menu" aria-controls="sidebar">
+          <span></span><span></span><span></span>
+        </label>
+
+        <div class="patient">
+          <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=120&auto=format&fit=crop" alt="Patient avatar" />
+          <div>
+            <div class="patient-name">Modupe Onwugbonu</div>
+            <div class="patient-id">Patient ID: MO-10294</div>
+          </div>
+        </div>
+
+        <div class="app-bar-right">
+          <span class="tag online">Online</span>
+        </div>
+      </header>
+
+      <!-- Hero / next appointment -->
+      <section class="hero card">
+        <div class="hero-text">
+          <h1>Welcome back</h1>
+          <p class="muted">View your upcoming appointments, repeat prescriptions, and medical history at a glance.</p>
+        </div>
+        <div class="next-appt">
+          <h3>Next appointment</h3>
+          <p class="big">Mon, 28 Oct · 09:30</p>
+          <p class="muted">Dr. Angela Wright — Cardiology</p>
+          <div class="badges">
+            <span class="badge">In-person</span>
+            <span class="badge light">Room 214</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2-column dashboard -->
+      <section class="grid-2">
+        <!-- Appointments list -->
+        <section class="card">
+          <div class="section-head">
+            <h2>Appointments</h2>
+            <a class="link" href="#">See all</a>
+          </div>
+
+          <ul class="list appt-list">
+            <li class="row">
+              <div class="when">
+                <span class="day">Tue</span>
+                <span class="date">22 Oct</span>
+                <span class="time">10:15</span>
+              </div>
+              <div class="info">
+                <div class="title">Follow-up — General Medicine</div>
+                <div class="muted">Dr. Kumar · Clinic 3</div>
+              </div>
+              <div class="status">
+                <span class="pill pending">Confirmed</span>
+              </div>
+            </li>
+
+            <li class="row">
+              <div class="when">
+                <span class="day">Fri</span>
+                <span class="date">25 Oct</span>
+                <span class="time">14:00</span>
+              </div>
+              <div class="info">
+                <div class="title">Lab Results Review</div>
+                <div class="muted">Nurse Patel · Televisit</div>
+              </div>
+              <div class="status">
+                <span class="pill info">Virtual</span>
+              </div>
+            </li>
+
+            <li class="row">
+              <div class="when">
+                <span class="day">Mon</span>
+                <span class="date">28 Oct</span>
+                <span class="time">09:30</span>
+              </div>
+              <div class="info">
+                <div class="title">Cardiology Check</div>
+                <div class="muted">Dr. Angela Wright · Room 214</div>
+              </div>
+              <div class="status">
+                <span class="pill success">Check-in 10m early</span>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Prescriptions -->
+        <section class="card">
+          <div class="section-head">
+            <h2>Prescriptions</h2>
+            <a class="link" href="#">Manage</a>
+          </div>
+
+          <div class="rx-grid">
+            <article class="rx">
+              <header class="rx-top">
+                <h3>Atorvastatin 20mg</h3>
+                <span class="pill success">Active</span>
+              </header>
+              <p class="muted">1 tablet at night · 90 tablets</p>
+              <dl class="rx-meta">
+                <div><dt>Prescriber</dt><dd>Dr. Wright</dd></div>
+                <div><dt>Refills</dt><dd>1 remaining</dd></div>
+                <div><dt>Last filled</dt><dd>12 Oct 2025</dd></div>
+              </dl>
+              <div class="rx-actions">
+                <a class="btn light" href="#">Details</a>
+                <a class="btn" href="#">Request refill</a>
+              </div>
+            </article>
+
+            <article class="rx">
+              <header class="rx-top">
+                <h3>Metformin 500mg</h3>
+                <span class="pill pending">Due soon</span>
+              </header>
+              <p class="muted">1 tablet twice daily · 60 tablets</p>
+              <dl class="rx-meta">
+                <div><dt>Prescriber</dt><dd>Dr. Kumar</dd></div>
+                <div><dt>Refills</dt><dd>None</dd></div>
+                <div><dt>Last filled</dt><dd>02 Oct 2025</dd></div>
+              </dl>
+              <div class="rx-actions">
+                <a class="btn light" href="#">Details</a>
+                <a class="btn" href="#">Request refill</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <!-- Medical history -->
+      <section class="card">
+        <div class="section-head">
+          <h2>Medical History</h2>
+          <a class="link" href="#">Download summary</a>
+        </div>
+
+        <ol class="timeline">
+          <li class="event">
+            <div class="event-dot"></div>
+            <div class="event-body">
+              <div class="event-head">
+                <h3>Blood work · Comprehensive Metabolic Panel</h3>
+                <span class="muted">14 Oct 2025 · Lab</span>
+              </div>
+              <p class="muted">Results within normal range; continue current medication plan.</p>
+            </div>
+          </li>
+
+          <li class="event">
+            <div class="event-dot"></div>
+            <div class="event-body">
+              <div class="event-head">
+                <h3>Initial Cardiology Consultation</h3>
+                <span class="muted">02 Oct 2025 · Cardiology</span>
+              </div>
+              <p class="muted">ECG performed; lifestyle changes discussed. Follow-up scheduled.</p>
+            </div>
+          </li>
+
+          <li class="event">
+            <div class="event-dot"></div>
+            <div class="event-body">
+              <div class="event-head">
+                <h3>Type 2 Diabetes diagnosis</h3>
+                <span class="muted">15 Oct 2025 · General Medicine</span>
+              </div>
+              <p class="muted">Metformin initiated. Dietician referral made.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <footer class="footer small muted">
+        Need help? Call reception on <strong>xx xxxx xxx</strong> or email <a class="link" href="#">support@clinic.plus</a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
